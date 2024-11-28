@@ -1,0 +1,611 @@
+2024-11-19T00:01:39.759-03:00  INFO 2684 --- [Ifood] [restartedMain] com.trabalho.ifood.IfoodApplication      : Starting IfoodApplication using Java 17.0.12 with PID 2684 (D:\DOCUMENTOS\Desktop\Mateus\FEF\4 semestre\lab programação\Ifood\target\classes started by Cliente in D:\DOCUMENTOS\Desktop\Mateus\FEF\4 semestre\lab programação\Ifood)
+2024-11-19T00:01:39.787-03:00  INFO 2684 --- [Ifood] [restartedMain] com.trabalho.ifood.IfoodApplication      : The following 1 profile is active: "dev"
+2024-11-19T00:01:40.080-03:00  INFO 2684 --- [Ifood] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-19T00:01:40.080-03:00  INFO 2684 --- [Ifood] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-19T00:01:41.450-03:00  INFO 2684 --- [Ifood] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T00:01:41.550-03:00  INFO 2684 --- [Ifood] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 3 JPA repository interfaces.
+2024-11-19T00:01:43.217-03:00  INFO 2684 --- [Ifood] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-19T00:01:43.243-03:00  INFO 2684 --- [Ifood] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T00:01:43.243-03:00  INFO 2684 --- [Ifood] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-19T00:01:43.343-03:00  INFO 2684 --- [Ifood] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T00:01:43.344-03:00  INFO 2684 --- [Ifood] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3162 ms
+2024-11-19T00:01:43.451-03:00  INFO 2684 --- [Ifood] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-19T00:01:43.859-03:00  INFO 2684 --- [Ifood] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3c943640
+2024-11-19T00:01:43.862-03:00  INFO 2684 --- [Ifood] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-19T00:01:43.885-03:00  INFO 2684 --- [Ifood] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/DBifood'
+2024-11-19T00:01:44.172-03:00  INFO 2684 --- [Ifood] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T00:01:44.304-03:00  INFO 2684 --- [Ifood] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-19T00:01:44.380-03:00  INFO 2684 --- [Ifood] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T00:01:44.541-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BasicTypeReference@32f3d636
+2024-11-19T00:01:44.542-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BasicTypeReference@32f3d636
+2024-11-19T00:01:44.542-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -> org.hibernate.type.BasicTypeReference@32f3d636
+2024-11-19T00:01:44.542-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -> org.hibernate.type.BasicTypeReference@2bba2a30
+2024-11-19T00:01:44.543-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.NumericBooleanConverter -> org.hibernate.type.BasicTypeReference@2bba2a30
+2024-11-19T00:01:44.543-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -> org.hibernate.type.BasicTypeReference@4cf27d0a
+2024-11-19T00:01:44.543-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.TrueFalseConverter -> org.hibernate.type.BasicTypeReference@4cf27d0a
+2024-11-19T00:01:44.544-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -> org.hibernate.type.BasicTypeReference@42aa4df1
+2024-11-19T00:01:44.544-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.YesNoConverter -> org.hibernate.type.BasicTypeReference@42aa4df1
+2024-11-19T00:01:44.544-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.BasicTypeReference@6e4471f4
+2024-11-19T00:01:44.544-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.BasicTypeReference@6e4471f4
+2024-11-19T00:01:44.545-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -> org.hibernate.type.BasicTypeReference@6e4471f4
+2024-11-19T00:01:44.546-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -> org.hibernate.type.BasicTypeReference@14553da6
+2024-11-19T00:01:44.546-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -> org.hibernate.type.BasicTypeReference@14553da6
+2024-11-19T00:01:44.546-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -> org.hibernate.type.BasicTypeReference@14553da6
+2024-11-19T00:01:44.546-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary_wrapper -> org.hibernate.type.BasicTypeReference@16431010
+2024-11-19T00:01:44.547-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -> org.hibernate.type.BasicTypeReference@16431010
+2024-11-19T00:01:44.547-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -> org.hibernate.type.BasicTypeReference@2bc6b773
+2024-11-19T00:01:44.547-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -> org.hibernate.type.BasicTypeReference@605db240
+2024-11-19T00:01:44.548-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -> org.hibernate.type.BasicTypeReference@605db240
+2024-11-19T00:01:44.548-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -> org.hibernate.type.BasicTypeReference@13e1887f
+2024-11-19T00:01:44.548-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob_wrapper -> org.hibernate.type.BasicTypeReference@1dacc983
+2024-11-19T00:01:44.548-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.BasicTypeReference@34f986a
+2024-11-19T00:01:44.549-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.BasicTypeReference@34f986a
+2024-11-19T00:01:44.549-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -> org.hibernate.type.BasicTypeReference@34f986a
+2024-11-19T00:01:44.549-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -> org.hibernate.type.BasicTypeReference@e0df5f1
+2024-11-19T00:01:44.549-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -> org.hibernate.type.BasicTypeReference@e0df5f1
+2024-11-19T00:01:44.549-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -> org.hibernate.type.BasicTypeReference@e0df5f1
+2024-11-19T00:01:44.550-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.BasicTypeReference@1130263f
+2024-11-19T00:01:44.550-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.BasicTypeReference@1130263f
+2024-11-19T00:01:44.550-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -> org.hibernate.type.BasicTypeReference@1130263f
+2024-11-19T00:01:44.550-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.BasicTypeReference@6aab054b
+2024-11-19T00:01:44.551-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.BasicTypeReference@6aab054b
+2024-11-19T00:01:44.551-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -> org.hibernate.type.BasicTypeReference@6aab054b
+2024-11-19T00:01:44.551-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.BasicTypeReference@15d85cbc
+2024-11-19T00:01:44.551-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.BasicTypeReference@15d85cbc
+2024-11-19T00:01:44.551-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -> org.hibernate.type.BasicTypeReference@15d85cbc
+2024-11-19T00:01:44.552-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -> org.hibernate.type.BasicTypeReference@741b818b
+2024-11-19T00:01:44.552-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -> org.hibernate.type.BasicTypeReference@741b818b
+2024-11-19T00:01:44.552-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -> org.hibernate.type.BasicTypeReference@640a50e9
+2024-11-19T00:01:44.552-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -> org.hibernate.type.BasicTypeReference@640a50e9
+2024-11-19T00:01:44.552-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -> org.hibernate.type.BasicTypeReference@5639807e
+2024-11-19T00:01:44.553-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -> org.hibernate.type.BasicTypeReference@5639807e
+2024-11-19T00:01:44.553-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -> org.hibernate.type.BasicTypeReference@5639807e
+2024-11-19T00:01:44.553-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration character_nchar -> org.hibernate.type.BasicTypeReference@1d31bb9
+2024-11-19T00:01:44.553-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -> org.hibernate.type.BasicTypeReference@296cd5d1
+2024-11-19T00:01:44.553-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -> org.hibernate.type.BasicTypeReference@296cd5d1
+2024-11-19T00:01:44.554-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -> org.hibernate.type.BasicTypeReference@1fd7550d
+2024-11-19T00:01:44.554-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -> org.hibernate.type.BasicTypeReference@5f70cf9
+2024-11-19T00:01:44.554-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -> org.hibernate.type.BasicTypeReference@5f70cf9
+2024-11-19T00:01:44.554-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -> org.hibernate.type.BasicTypeReference@5f70cf9
+2024-11-19T00:01:44.555-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -> org.hibernate.type.BasicTypeReference@1c60c12d
+2024-11-19T00:01:44.555-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -> org.hibernate.type.BasicTypeReference@536d5d2d
+2024-11-19T00:01:44.555-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -> org.hibernate.type.BasicTypeReference@76370570
+2024-11-19T00:01:44.556-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -> org.hibernate.type.BasicTypeReference@4b9a4f8b
+2024-11-19T00:01:44.558-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -> org.hibernate.type.BasicTypeReference@4b9a4f8b
+2024-11-19T00:01:44.559-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -> org.hibernate.type.BasicTypeReference@51e9967c
+2024-11-19T00:01:44.559-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -> org.hibernate.type.BasicTypeReference@51e9967c
+2024-11-19T00:01:44.559-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -> org.hibernate.type.BasicTypeReference@68d43d59
+2024-11-19T00:01:44.560-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_char_array -> org.hibernate.type.BasicTypeReference@2686a9b6
+2024-11-19T00:01:44.560-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_character_array -> org.hibernate.type.BasicTypeReference@3f795cfa
+2024-11-19T00:01:44.560-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -> org.hibernate.type.BasicTypeReference@22be771f
+2024-11-19T00:01:44.561-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_character_array -> org.hibernate.type.BasicTypeReference@6b49a8e4
+2024-11-19T00:01:44.561-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_char_array -> org.hibernate.type.BasicTypeReference@78917722
+2024-11-19T00:01:44.561-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> org.hibernate.type.BasicTypeReference@dfa6a46
+2024-11-19T00:01:44.562-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> org.hibernate.type.BasicTypeReference@dfa6a46
+2024-11-19T00:01:44.563-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDateTime -> org.hibernate.type.BasicTypeReference@5cadf269
+2024-11-19T00:01:44.563-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDateTime -> org.hibernate.type.BasicTypeReference@5cadf269
+2024-11-19T00:01:44.563-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDate -> org.hibernate.type.BasicTypeReference@7a856f90
+2024-11-19T00:01:44.563-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDate -> org.hibernate.type.BasicTypeReference@7a856f90
+2024-11-19T00:01:44.564-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalTime -> org.hibernate.type.BasicTypeReference@95e3f85
+2024-11-19T00:01:44.564-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalTime -> org.hibernate.type.BasicTypeReference@95e3f85
+2024-11-19T00:01:44.564-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> org.hibernate.type.BasicTypeReference@57a8ccb2
+2024-11-19T00:01:44.564-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> org.hibernate.type.BasicTypeReference@57a8ccb2
+2024-11-19T00:01:44.564-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@64254294
+2024-11-19T00:01:44.565-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@350d486f
+2024-11-19T00:01:44.565-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> org.hibernate.type.BasicTypeReference@4d57fb5c
+2024-11-19T00:01:44.565-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> org.hibernate.type.BasicTypeReference@4d57fb5c
+2024-11-19T00:01:44.566-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeUtc -> org.hibernate.type.BasicTypeReference@5c8b7318
+2024-11-19T00:01:44.566-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithTimezone -> org.hibernate.type.BasicTypeReference@1274bbff
+2024-11-19T00:01:44.566-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@4d65c7ee
+2024-11-19T00:01:44.566-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> org.hibernate.type.BasicTypeReference@3f9a5805
+2024-11-19T00:01:44.566-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> org.hibernate.type.BasicTypeReference@3f9a5805
+2024-11-19T00:01:44.567-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@380eff5d
+2024-11-19T00:01:44.567-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@f1200e0
+2024-11-19T00:01:44.567-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -> org.hibernate.type.BasicTypeReference@6c2bec5b
+2024-11-19T00:01:44.567-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -> org.hibernate.type.BasicTypeReference@6c2bec5b
+2024-11-19T00:01:44.567-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -> org.hibernate.type.BasicTypeReference@19ccbab
+2024-11-19T00:01:44.567-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -> org.hibernate.type.BasicTypeReference@19ccbab
+2024-11-19T00:01:44.567-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -> org.hibernate.type.BasicTypeReference@4ea738d2
+2024-11-19T00:01:44.568-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -> org.hibernate.type.BasicTypeReference@4ea738d2
+2024-11-19T00:01:44.568-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -> org.hibernate.type.BasicTypeReference@4ea738d2
+2024-11-19T00:01:44.569-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -> org.hibernate.type.BasicTypeReference@512d24e6
+2024-11-19T00:01:44.570-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -> org.hibernate.type.BasicTypeReference@512d24e6
+2024-11-19T00:01:44.570-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.BasicTypeReference@512d24e6
+2024-11-19T00:01:44.570-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -> org.hibernate.type.BasicTypeReference@625743ac
+2024-11-19T00:01:44.571-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_time -> org.hibernate.type.BasicTypeReference@5f10dde
+2024-11-19T00:01:44.571-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration instant -> org.hibernate.type.BasicTypeReference@72e7d41a
+2024-11-19T00:01:44.571-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Instant -> org.hibernate.type.BasicTypeReference@72e7d41a
+2024-11-19T00:01:44.571-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid -> org.hibernate.type.BasicTypeReference@4a55d4b4
+2024-11-19T00:01:44.571-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.BasicTypeReference@4a55d4b4
+2024-11-19T00:01:44.572-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration pg-uuid -> org.hibernate.type.BasicTypeReference@4a55d4b4
+2024-11-19T00:01:44.572-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -> org.hibernate.type.BasicTypeReference@1247b471
+2024-11-19T00:01:44.572-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -> org.hibernate.type.BasicTypeReference@1fd5d41a
+2024-11-19T00:01:44.572-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -> org.hibernate.type.BasicTypeReference@535e94fe
+2024-11-19T00:01:44.572-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -> org.hibernate.type.BasicTypeReference@535e94fe
+2024-11-19T00:01:44.572-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -> org.hibernate.type.BasicTypeReference@374a0a55
+2024-11-19T00:01:44.572-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration Currency -> org.hibernate.type.BasicTypeReference@374a0a55
+2024-11-19T00:01:44.572-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -> org.hibernate.type.BasicTypeReference@374a0a55
+2024-11-19T00:01:44.573-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -> org.hibernate.type.BasicTypeReference@1881d4f1
+2024-11-19T00:01:44.573-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -> org.hibernate.type.BasicTypeReference@1881d4f1
+2024-11-19T00:01:44.573-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -> org.hibernate.type.BasicTypeReference@2945a6ff
+2024-11-19T00:01:44.573-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.io.Serializable -> org.hibernate.type.BasicTypeReference@2945a6ff
+2024-11-19T00:01:44.573-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -> org.hibernate.type.BasicTypeReference@e9b2e4d
+2024-11-19T00:01:44.574-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -> org.hibernate.type.BasicTypeReference@e9b2e4d
+2024-11-19T00:01:44.574-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZoneOffset -> org.hibernate.type.BasicTypeReference@69e48569
+2024-11-19T00:01:44.574-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZoneOffset -> org.hibernate.type.BasicTypeReference@69e48569
+2024-11-19T00:01:44.575-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -> org.hibernate.type.BasicTypeReference@7fd4e2f8
+2024-11-19T00:01:44.575-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -> org.hibernate.type.BasicTypeReference@7fd4e2f8
+2024-11-19T00:01:44.576-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration vector -> org.hibernate.type.BasicTypeReference@7b22d1a3
+2024-11-19T00:01:44.576-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration row_version -> org.hibernate.type.BasicTypeReference@2c9c71cc
+2024-11-19T00:01:44.584-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -> org.hibernate.type.JavaObjectType@5f9575cc
+2024-11-19T00:01:44.585-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@5f9575cc
+2024-11-19T00:01:44.587-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration null -> org.hibernate.type.NullType@68742021
+2024-11-19T00:01:44.589-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -> org.hibernate.type.BasicTypeReference@17020b8f
+2024-11-19T00:01:44.590-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -> org.hibernate.type.BasicTypeReference@57b2ebef
+2024-11-19T00:01:44.591-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -> org.hibernate.type.BasicTypeReference@6aaef3ea
+2024-11-19T00:01:44.591-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -> org.hibernate.type.BasicTypeReference@2312a3b6
+2024-11-19T00:01:44.591-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -> org.hibernate.type.BasicTypeReference@244b9a28
+2024-11-19T00:01:44.592-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_time -> org.hibernate.type.BasicTypeReference@6466f0dd
+2024-11-19T00:01:44.592-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -> org.hibernate.type.BasicTypeReference@794a6e18
+2024-11-19T00:01:44.592-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -> org.hibernate.type.BasicTypeReference@4f737d94
+2024-11-19T00:01:45.291-03:00  INFO 2684 --- [Ifood] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T00:01:45.592-03:00 DEBUG 2684 --- [Ifood] [restartedMain] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@2ef23b84) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@1d9948fc)
+2024-11-19T00:01:45.594-03:00 DEBUG 2684 --- [Ifood] [restartedMain] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@659a3655) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4126cf39)
+2024-11-19T00:01:45.611-03:00 DEBUG 2684 --- [Ifood] [restartedMain] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(2004, BlobTypeDescriptor(BLOB_BINDING)) replaced previous registration(BlobTypeDescriptor(DEFAULT))
+2024-11-19T00:01:45.612-03:00 DEBUG 2684 --- [Ifood] [restartedMain] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(2005, ClobTypeDescriptor(CLOB_BINDING)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+2024-11-19T00:01:45.640-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration JAVA_OBJECT -> org.hibernate.type.JavaObjectType@6854019b
+2024-11-19T00:01:45.641-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@6854019b
+2024-11-19T00:01:45.643-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Type registration key [java.lang.Object] overrode previous entry : `org.hibernate.type.JavaObjectType@5f9575cc`
+2024-11-19T00:01:45.659-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.DurationType -> basicType@1(java.time.Duration,3015)
+2024-11-19T00:01:45.660-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> basicType@1(java.time.Duration,3015)
+2024-11-19T00:01:45.662-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> basicType@1(java.time.Duration,3015)
+2024-11-19T00:01:45.673-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.OffsetDateTimeType -> basicType@2(java.time.OffsetDateTime,3003)
+2024-11-19T00:01:45.673-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> basicType@2(java.time.OffsetDateTime,3003)
+2024-11-19T00:01:45.673-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> basicType@2(java.time.OffsetDateTime,3003)
+2024-11-19T00:01:45.673-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.ZonedDateTimeType -> basicType@3(java.time.ZonedDateTime,3003)
+2024-11-19T00:01:45.673-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> basicType@3(java.time.ZonedDateTime,3003)
+2024-11-19T00:01:45.674-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> basicType@3(java.time.ZonedDateTime,3003)
+2024-11-19T00:01:45.675-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.OffsetTimeType -> basicType@4(java.time.OffsetTime,3007)
+2024-11-19T00:01:45.676-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> basicType@4(java.time.OffsetTime,3007)
+2024-11-19T00:01:45.676-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> basicType@4(java.time.OffsetTime,3007)
+2024-11-19T00:01:45.679-03:00 DEBUG 2684 --- [Ifood] [restartedMain] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@3c47d94] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@3cea3879]
+2024-11-19T00:01:47.521-03:00  INFO 2684 --- [Ifood] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T00:01:47.521-03:00 DEBUG 2684 --- [Ifood] [restartedMain] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@3c47d94] to SessionFactoryImplementor [org.hibernate.internal.SessionFactoryImpl@435d0204]
+2024-11-19T00:01:47.540-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists pedido 
+       drop constraint if exists FK9y4jnyp1hxqa386cnly0ay9uw
+2024-11-19T00:01:47.548-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists pedido 
+       drop constraint if exists FKbr2kth0e85i6y7q3279biemmm
+2024-11-19T00:01:47.550-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists cliente cascade
+2024-11-19T00:01:47.555-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists estabelecimento cascade
+2024-11-19T00:01:47.560-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists pedido cascade
+2024-11-19T00:01:47.566-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    drop sequence if exists seq_cliente
+2024-11-19T00:01:47.569-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    drop sequence if exists seq_estabelecimento
+2024-11-19T00:01:47.571-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    drop sequence if exists seq_pedido
+2024-11-19T00:01:47.579-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    create sequence seq_cliente start with 1 increment by 50
+2024-11-19T00:01:47.585-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    create sequence seq_estabelecimento start with 1 increment by 50
+2024-11-19T00:01:47.587-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    create sequence seq_pedido start with 1 increment by 50
+2024-11-19T00:01:47.592-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    create table cliente (
+        id_cliente integer not null,
+        cpf varchar(255) not null,
+        email varchar(255) not null,
+        endereco varchar(255) not null,
+        nome varchar(255) not null,
+        senha varchar(255) not null,
+        telefone varchar(255) not null,
+        primary key (id_cliente)
+    )
+2024-11-19T00:01:47.602-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    create table estabelecimento (
+        id_estab integer not null,
+        valor_frete numeric(17,2) not null,
+        cnpj varchar(255) not null,
+        nome varchar(255) not null,
+        nota_avaliacao varchar(255) not null,
+        tipo_culinaria varchar(255) not null,
+        primary key (id_estab)
+    )
+2024-11-19T00:01:47.612-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    create table pedido (
+        data_pedido date,
+        id_cliente integer,
+        id_estabelecimento integer,
+        status_pedido smallint check (status_pedido between 0 and 2),
+        tipo_entrega smallint check (tipo_entrega between 0 and 1),
+        valor numeric(17,2) not null,
+        id bigint not null,
+        descricao_pedido varchar(255) not null,
+        tempo_espera varchar(255) not null unique,
+        primary key (id)
+    )
+2024-11-19T00:01:47.623-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists pedido 
+       add constraint FK9y4jnyp1hxqa386cnly0ay9uw 
+       foreign key (id_cliente) 
+       references cliente
+2024-11-19T00:01:47.629-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists pedido 
+       add constraint FKbr2kth0e85i6y7q3279biemmm 
+       foreign key (id_estabelecimento) 
+       references estabelecimento
+2024-11-19T00:01:47.634-03:00 TRACE 2684 --- [Ifood] [restartedMain] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@435d0204] for TypeConfiguration
+2024-11-19T00:01:47.634-03:00  INFO 2684 --- [Ifood] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T00:01:48.375-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    select
+        nextval('seq_cliente')
+2024-11-19T00:01:48.509-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        cliente
+        (cpf, email, endereco, nome, senha, telefone, id_cliente) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2024-11-19T00:01:48.535-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    select
+        nextval('seq_cliente')
+2024-11-19T00:01:48.539-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        cliente
+        (cpf, email, endereco, nome, senha, telefone, id_cliente) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2024-11-19T00:01:48.542-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    select
+        nextval('seq_estabelecimento')
+2024-11-19T00:01:48.546-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        estabelecimento
+        (cnpj, nome, nota_avaliacao, tipo_culinaria, valor_frete, id_estab) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2024-11-19T00:01:48.553-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    select
+        nextval('seq_estabelecimento')
+2024-11-19T00:01:48.555-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        estabelecimento
+        (cnpj, nome, nota_avaliacao, tipo_culinaria, valor_frete, id_estab) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2024-11-19T00:01:48.559-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    select
+        nextval('seq_pedido')
+2024-11-19T00:01:48.562-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        pedido
+        (id_cliente, id_estabelecimento, data_pedido, descricao_pedido, status_pedido, tempo_espera, tipo_entrega, valor, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19T00:01:48.568-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    select
+        nextval('seq_pedido')
+2024-11-19T00:01:48.570-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        pedido
+        (id_cliente, id_estabelecimento, data_pedido, descricao_pedido, status_pedido, tempo_espera, tipo_entrega, valor, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19T00:01:48.575-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        pedido
+        (id_cliente, id_estabelecimento, data_pedido, descricao_pedido, status_pedido, tempo_espera, tipo_entrega, valor, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19T00:01:48.582-03:00 DEBUG 2684 --- [Ifood] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        pedido
+        (id_cliente, id_estabelecimento, data_pedido, descricao_pedido, status_pedido, tempo_espera, tipo_entrega, valor, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19T00:01:48.803-03:00  WARN 2684 --- [Ifood] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-19T00:01:49.497-03:00  INFO 2684 --- [Ifood] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-19T00:01:49.559-03:00  INFO 2684 --- [Ifood] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-19T00:01:49.576-03:00  INFO 2684 --- [Ifood] [restartedMain] com.trabalho.ifood.IfoodApplication      : Started IfoodApplication in 10.708 seconds (process running for 11.674)
+2024-11-19T00:05:12.896-03:00  INFO 2684 --- [Ifood] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T00:05:12.897-03:00  INFO 2684 --- [Ifood] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T00:05:12.901-03:00  INFO 2684 --- [Ifood] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-11-19T00:05:13.188-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.id_cliente,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.endereco,
+        c1_0.nome,
+        c1_0.senha,
+        c1_0.telefone 
+    from
+        cliente c1_0
+2024-11-19T00:07:16.320-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        c1_0.id_cliente,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.endereco,
+        c1_0.nome,
+        c1_0.senha,
+        c1_0.telefone 
+    from
+        cliente c1_0
+2024-11-19T00:07:25.404-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        c1_0.id_cliente,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.endereco,
+        c1_0.nome,
+        c1_0.senha,
+        c1_0.telefone 
+    from
+        cliente c1_0 
+    where
+        c1_0.id_cliente=?
+2024-11-19T00:07:36.321-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        e1_0.id_estab,
+        e1_0.cnpj,
+        e1_0.nome,
+        e1_0.nota_avaliacao,
+        e1_0.tipo_culinaria,
+        e1_0.valor_frete 
+    from
+        estabelecimento e1_0 
+    where
+        e1_0.id_estab=?
+2024-11-19T00:07:49.125-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        c1_0.id_cliente,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.endereco,
+        c1_0.nome,
+        c1_0.senha,
+        c1_0.telefone,
+        e1_0.id_estab,
+        e1_0.cnpj,
+        e1_0.nome,
+        e1_0.nota_avaliacao,
+        e1_0.tipo_culinaria,
+        e1_0.valor_frete,
+        p1_0.data_pedido,
+        p1_0.descricao_pedido,
+        p1_0.status_pedido,
+        p1_0.tempo_espera,
+        p1_0.tipo_entrega,
+        p1_0.valor 
+    from
+        pedido p1_0 
+    left join
+        cliente c1_0 
+            on c1_0.id_cliente=p1_0.id_cliente 
+    left join
+        estabelecimento e1_0 
+            on e1_0.id_estab=p1_0.id_estabelecimento 
+    where
+        p1_0.id=?
+2024-11-19T00:07:56.730-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.id_cliente,
+        p1_0.id_estabelecimento,
+        p1_0.data_pedido,
+        p1_0.descricao_pedido,
+        p1_0.status_pedido,
+        p1_0.tempo_espera,
+        p1_0.tipo_entrega,
+        p1_0.valor 
+    from
+        pedido p1_0
+2024-11-19T00:07:56.733-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        c1_0.id_cliente,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.endereco,
+        c1_0.nome,
+        c1_0.senha,
+        c1_0.telefone 
+    from
+        cliente c1_0 
+    where
+        c1_0.id_cliente=?
+2024-11-19T00:07:56.734-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        e1_0.id_estab,
+        e1_0.cnpj,
+        e1_0.nome,
+        e1_0.nota_avaliacao,
+        e1_0.tipo_culinaria,
+        e1_0.valor_frete 
+    from
+        estabelecimento e1_0 
+    where
+        e1_0.id_estab=?
+2024-11-19T00:07:56.737-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        c1_0.id_cliente,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.endereco,
+        c1_0.nome,
+        c1_0.senha,
+        c1_0.telefone 
+    from
+        cliente c1_0 
+    where
+        c1_0.id_cliente=?
+2024-11-19T00:07:56.738-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        e1_0.id_estab,
+        e1_0.cnpj,
+        e1_0.nome,
+        e1_0.nota_avaliacao,
+        e1_0.tipo_culinaria,
+        e1_0.valor_frete 
+    from
+        estabelecimento e1_0 
+    where
+        e1_0.id_estab=?
+2024-11-19T00:09:09.325-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.id_cliente,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.endereco,
+        c1_0.nome,
+        c1_0.senha,
+        c1_0.telefone 
+    from
+        cliente c1_0 
+    where
+        c1_0.id_cliente=?
+2024-11-19T00:09:09.333-03:00 ERROR 2684 --- [Ifood] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: Cliente - 0 não está cadastrado.] with root cause
+
+org.springframework.dao.DataIntegrityViolationException: Cliente - 0 não está cadastrado.
+	at com.trabalho.ifood.services.PedidoService.validaPedido(PedidoService.java:52) ~[classes/:na]
+	at com.trabalho.ifood.services.PedidoService.create(PedidoService.java:44) ~[classes/:na]
+	at com.trabalho.ifood.resources.PedidoResource.create(PedidoResource.java:35) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-11-19T00:09:34.762-03:00 DEBUG 2684 --- [Ifood] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.id_cliente,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.endereco,
+        c1_0.nome,
+        c1_0.senha,
+        c1_0.telefone 
+    from
+        cliente c1_0 
+    where
+        c1_0.id_cliente=?
+2024-11-19T00:09:34.766-03:00 ERROR 2684 --- [Ifood] [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: Cliente - 0 não está cadastrado.] with root cause
+
+org.springframework.dao.DataIntegrityViolationException: Cliente - 0 não está cadastrado.
+	at com.trabalho.ifood.services.PedidoService.validaPedido(PedidoService.java:52) ~[classes/:na]
+	at com.trabalho.ifood.services.PedidoService.create(PedidoService.java:44) ~[classes/:na]
+	at com.trabalho.ifood.resources.PedidoResource.create(PedidoResource.java:35) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-11-19T00:10:48.143-03:00  INFO 2684 --- [Ifood] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T00:10:48.144-03:00 TRACE 2684 --- [Ifood] [SpringApplicationShutdownHook] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@435d0204] for TypeConfiguration
+2024-11-19T00:10:48.144-03:00 DEBUG 2684 --- [Ifood] [SpringApplicationShutdownHook] o.h.type.spi.TypeConfiguration$Scope     : Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@6aa218e3] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@435d0204]
+2024-11-19T00:10:48.150-03:00  INFO 2684 --- [Ifood] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-19T00:10:48.159-03:00  INFO 2684 --- [Ifood] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
