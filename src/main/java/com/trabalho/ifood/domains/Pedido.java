@@ -47,8 +47,8 @@ public class Pedido {
     private TipoEntrega tipoEntrega;
 
     @ManyToOne
-    @JoinColumn(name="idCliente")
-    private Cliente Cliente;
+    @JoinColumn(name="idPessoa")
+    private Pessoa Pessoa;
 
     @ManyToOne
     @JoinColumn(name="idEstabelecimento")
@@ -60,7 +60,7 @@ public class Pedido {
         this.tipoEntrega = TipoEntrega.ENTREGA;
     }
 
-    public Pedido(Long id, String descricaoPedido, String tempoEspera, LocalDate dataPedido, BigDecimal valor, StatusPedido status, TipoEntrega tipoEntrega, Cliente Cliente, Estabelecimento Estabelecimento) {
+    public Pedido(Long id, String descricaoPedido, String tempoEspera, LocalDate dataPedido, BigDecimal valor, StatusPedido status, TipoEntrega tipoEntrega, Pessoa Pessoa, Estabelecimento Estabelecimento) {
         this.id = id;
         this.descricaoPedido = descricaoPedido;
         this.tempoEspera = tempoEspera;
@@ -68,7 +68,7 @@ public class Pedido {
         this.valor = valor;
         this.statusPedido = status;
         this.tipoEntrega = tipoEntrega;
-        this.Cliente = Cliente;
+        this.Pessoa = Pessoa;
         this.Estabelecimento = Estabelecimento;
     }
 
@@ -79,8 +79,8 @@ public class Pedido {
         this.dataPedido = dto.getdataPedido();
         this.valor = dto.getvalor();
 
-        this.Cliente = new Cliente();
-        this.Cliente.setIdCliente(dto.getCliente());
+        this.Pessoa = new Pessoa();
+        this.Pessoa.setIdPessoa(dto.getPessoa());
         this.Estabelecimento = new Estabelecimento();
         this.Estabelecimento.setIdEstab(dto.getEstabelecimento());
         this.statusPedido = StatusPedido.toEnum(dto.getStatus());
@@ -145,12 +145,12 @@ public class Pedido {
         this.tipoEntrega = tipoEntrega;
     }
 
-    public Cliente getCliente() {
-        return Cliente;
+    public Pessoa getPessoa() {
+        return Pessoa;
     }
 
-    public void setCliente(Cliente Cliente) {
-        this.Cliente = Cliente;
+    public void setPessoa(Pessoa Pessoa) {
+        this.Pessoa = Pessoa;
     }
 
     public Estabelecimento getEstabelecimento() {
@@ -168,11 +168,11 @@ public class Pedido {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pedido Pedido = (Pedido) o;
-        return id == Pedido.id && Objects.equals(descricaoPedido, Pedido.descricaoPedido) && Objects.equals(tempoEspera, Pedido.tempoEspera) && Objects.equals(dataPedido, Pedido.dataPedido) && Objects.equals(valor, Pedido.valor) && statusPedido == Pedido.statusPedido && tipoEntrega == Pedido.tipoEntrega && Objects.equals(Cliente, Pedido.Cliente) && Objects.equals(Estabelecimento, Pedido.Estabelecimento);
+        return id == Pedido.id && Objects.equals(descricaoPedido, Pedido.descricaoPedido) && Objects.equals(tempoEspera, Pedido.tempoEspera) && Objects.equals(dataPedido, Pedido.dataPedido) && Objects.equals(valor, Pedido.valor) && statusPedido == Pedido.statusPedido && tipoEntrega == Pedido.tipoEntrega && Objects.equals(Pessoa, Pedido.Pessoa) && Objects.equals(Estabelecimento, Pedido.Estabelecimento);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, descricaoPedido, tempoEspera, dataPedido, valor, statusPedido, tipoEntrega, Cliente, Estabelecimento);
+        return Objects.hash(id, descricaoPedido, tempoEspera, dataPedido, valor, statusPedido, tipoEntrega, Pessoa, Estabelecimento);
     }
 }

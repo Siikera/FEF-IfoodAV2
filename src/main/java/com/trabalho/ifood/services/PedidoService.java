@@ -1,11 +1,11 @@
 package com.trabalho.ifood.services;
 
 
-import com.trabalho.ifood.domains.Cliente;
+import com.trabalho.ifood.domains.Pessoa;
 import com.trabalho.ifood.domains.Estabelecimento;
 import com.trabalho.ifood.domains.Pedido;
 import com.trabalho.ifood.domains.dtos.PedidoDTO;
-import com.trabalho.ifood.repositories.ClienteRepository;
+import com.trabalho.ifood.repositories.PessoaRepository;
 import com.trabalho.ifood.repositories.EstabelecimentoRepository;
 import com.trabalho.ifood.repositories.PedidoRepository;
 import com.trabalho.ifood.services.exceptions.ObjectNotFoundException;
@@ -24,7 +24,7 @@ public class PedidoService {
     private PedidoRepository PedidoRepo;
 
     @Autowired
-    private ClienteRepository ClienteRepo;
+    private PessoaRepository PessoaRepo;
 
     @Autowired
     private EstabelecimentoRepository EstabelecimentoRepo;
@@ -47,9 +47,9 @@ public class PedidoService {
     }
 
     private void validaPedido(PedidoDTO dto) {
-        Optional<Cliente> Cliente = ClienteRepo.findById(dto.getCliente());
-        if(!Cliente.isPresent()){
-            throw new DataIntegrityViolationException("Cliente - " + dto.getCliente() + " não está cadastrado.");
+        Optional<Pessoa> Pessoa = PessoaRepo.findById(dto.getPessoa());
+        if(!Pessoa.isPresent()){
+            throw new DataIntegrityViolationException("Pessoa - " + dto.getPessoa() + " não está cadastrado.");
         }
 
         Optional<Estabelecimento> Estabelecimento = EstabelecimentoRepo.findById(dto.getEstabelecimento());

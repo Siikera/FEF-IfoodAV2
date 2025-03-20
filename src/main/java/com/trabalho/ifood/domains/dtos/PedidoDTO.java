@@ -33,8 +33,8 @@ public class PedidoDTO {
     private int statusPedido;
     private int tipoEntrega;
 
-    @NotNull(message = "O campo Cliente é requerido")
-    private int Cliente;
+    @NotNull(message = "O campo Pessoa é requerido")
+    private int Pessoa;
 
     @NotNull(message = "O campo Estabelecimento é requerido")
     private int Estabelecimento;
@@ -50,7 +50,7 @@ public class PedidoDTO {
         this.valor = Pedido.getvalor();
         this.statusPedido = Pedido.getStatus().getId();
         this.tipoEntrega = Pedido.gettipoEntrega().getId();
-        Cliente = Pedido.getCliente().getIdCliente();
+        Pessoa = Pedido.getPessoa().getIdPessoa();
         Estabelecimento = Pedido.getEstabelecimento().getIdEstab();
     }
 
@@ -63,13 +63,13 @@ public class PedidoDTO {
         Estabelecimento = Estabelecimento;
     }
 
-    @NotNull(message = "O campo Cliente é requerido")
-    public int getCliente() {
-        return Cliente;
+    @NotNull(message = "O campo Pessoa é requerido")
+    public int getPessoa() {
+        return Pessoa;
     }
 
-    public void setCliente(@NotNull(message = "O campo Cliente é requerido") int Cliente) {
-        Cliente = Cliente;
+    public void setPessoa(@NotNull(message = "O campo Pessoa é requerido") int Pessoa) {
+        Pessoa = Pessoa;
     }
 
     public int gettipoEntrega() {

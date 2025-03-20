@@ -2,7 +2,7 @@ package com.trabalho.ifood.domains;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.trabalho.ifood.domains.dtos.ClienteDTO;
+import com.trabalho.ifood.domains.dtos.PessoaDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name="cliente")
-public class Cliente {
+@Table(name="pessoa")
+public class Pessoa {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_cliente")
-    private Integer idCliente;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_pessoa")
+    private Integer idPessoa;
 
     @NotNull
     @NotBlank
@@ -34,16 +34,8 @@ public class Cliente {
     @NotBlank
     private String cpf;
 
-    @NotNull
-    @NotBlank
-    private String email;
-
-    @NotNull
-    @NotBlank
-    private String senha;
-
     @JsonIgnore
-    @OneToMany(mappedBy = "Cliente")
+    @OneToMany(mappedBy = "Pessoa")
     private List<Pedido> pedidos = new ArrayList<>();
 
     public List<Pedido> getPedidos() {
@@ -54,51 +46,31 @@ public class Cliente {
         this.pedidos = pedidos;
     }
 
-    public Cliente() {
+    public Pessoa() {
     }
 
-    public Cliente(Integer idCliente, String nome, String endereco, String telefone, String cpf, String email, String senha) {
-        this.idCliente = idCliente;
+    public Pessoa(Integer idPessoa, String nome, String endereco, String telefone, String cpf) {
+        this.idPessoa = idPessoa;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.cpf = cpf;
-        this.email = email;
-        this.senha = senha;
     }
 
-    public Cliente(ClienteDTO dto) {
-        this.idCliente = dto.getIdCliente();
+    public Pessoa(PessoaDTO dto) {
+        this.idPessoa = dto.getIdPessoa();
         this.nome = dto.getNome();
         this.endereco = dto.getEndereco();
         this.telefone = dto.getTelefone();
         this.cpf = dto.getCpf();
-        this.email = dto.getEmail();
-        this.senha = dto.getSenha();
     }
 
-    public Integer getIdCliente() {
-        return idCliente;
+    public Integer getIdPessoa() {
+        return idPessoa;
     }
 
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
-    }
-
-    public @NotNull @NotBlank String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(@NotNull @NotBlank String senha) {
-        this.senha = senha;
-    }
-
-    public @NotNull @NotBlank String getEmail() {
-        return email;
-    }
-
-    public void setEmail(@NotNull @NotBlank String email) {
-        this.email = email;
+    public void setIdPessoa(Integer idPessoa) {
+        this.idPessoa = idPessoa;
     }
 
     public @NotNull @NotBlank String getCpf() {
@@ -137,12 +109,12 @@ public class Cliente {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Cliente cliente = (Cliente) o;
-        return Objects.equals(idCliente, cliente.idCliente) && Objects.equals(nome, cliente.nome) && Objects.equals(endereco, cliente.endereco) && Objects.equals(telefone, cliente.telefone) && Objects.equals(cpf, cliente.cpf) && Objects.equals(email, cliente.email) && Objects.equals(senha, cliente.senha);
+        Pessoa pessoa = (Pessoa) o;
+        return Objects.equals(idPessoa, pessoa.idPessoa) && Objects.equals(nome, pessoa.nome) && Objects.equals(endereco, pessoa.endereco) && Objects.equals(telefone, pessoa.telefone) && Objects.equals(cpf, pessoa.cpf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idCliente, nome, endereco, telefone, cpf, email, senha);
+        return Objects.hash(idPessoa, nome, endereco, telefone, cpf);
     }
 }

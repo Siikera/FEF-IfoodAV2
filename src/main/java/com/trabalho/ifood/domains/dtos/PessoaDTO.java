@@ -1,13 +1,13 @@
 package com.trabalho.ifood.domains.dtos;
 
 
-import com.trabalho.ifood.domains.Cliente;
+import com.trabalho.ifood.domains.Pessoa;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public class ClienteDTO {
+public class PessoaDTO {
 
-    private Integer idCliente;
+    private Integer idPessoa;
 
     @NotNull(message = "O campo Nome não pode ser nulo")
     @NotBlank(message = "O campo Nome não pode estar vazio ")
@@ -25,33 +25,23 @@ public class ClienteDTO {
     @NotBlank (message = "O campo cpf não pode estar vazio")
     private String cpf;
 
-    @NotNull(message = "O campo email não pode ser Nulo")
-    @NotBlank (message = "O campo email não pode estar vazio")
-    private String email;
-
-    @NotNull(message = "O campo senha não pode ser Nulo")
-    @NotBlank (message = "O campo senha não pode estar vazio")
-    private String senha;
-
-    public ClienteDTO() {
+    public PessoaDTO() {
     }
 
-    public ClienteDTO(Cliente cliente) {
-        this.idCliente = cliente.getIdCliente();
-        this.nome = cliente.getNome();
-        this.endereco = cliente.getEndereco();
-        this.telefone = cliente.getTelefone();
-        this.cpf = cliente.getCpf();
-        this.email = cliente.getEmail();
-        this.senha = cliente.getSenha();
+    public PessoaDTO(Pessoa pessoa) {
+        this.idPessoa = pessoa.getIdPessoa();
+        this.nome = pessoa.getNome();
+        this.endereco = pessoa.getEndereco();
+        this.telefone = pessoa.getTelefone();
+        this.cpf = pessoa.getCpf();
     }
 
-    public Integer getIdCliente() {
-        return idCliente;
+    public Integer getIdPessoa() {
+        return idPessoa;
     }
 
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+    public void setIdPessoa(Integer idPessoa) {
+        this.idPessoa = idPessoa;
     }
 
     public @NotNull(message = "O campo Nome não pode ser nulo") @NotBlank(message = "O campo Nome não pode estar vazio ") String getNome() {
@@ -78,27 +68,11 @@ public class ClienteDTO {
         this.telefone = telefone;
     }
 
-    public @NotNull(message = "O campo email não pode ser Nulo") @NotBlank(message = "O campo email não pode estar vazio") String getEmail() {
-        return email;
-    }
-
-    public void setEmail(@NotNull(message = "O campo email não pode ser Nulo") @NotBlank(message = "O campo email não pode estar vazio") String email) {
-        this.email = email;
-    }
-
     public @NotNull(message = "O campo cpf não pode ser Nulo") @NotBlank(message = "O campo cpf não pode estar vazio") String getCpf() {
         return cpf;
     }
 
     public void setCpf(@NotNull(message = "O campo cpf não pode ser Nulo") @NotBlank(message = "O campo cpf não pode estar vazio") String cpf) {
         this.cpf = cpf;
-    }
-
-    public @NotNull(message = "O campo senha não pode ser Nulo") @NotBlank(message = "O campo senha não pode estar vazio") String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(@NotNull(message = "O campo senha não pode ser Nulo") @NotBlank(message = "O campo senha não pode estar vazio") String senha) {
-        this.senha = senha;
     }
 }
