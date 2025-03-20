@@ -3,48 +3,44 @@ package com.trabalho.ifood.domains;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.trabalho.ifood.domains.dtos.PessoaDTO;
+import com.trabalho.ifood.domains.enums.TipoPessoa;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.time.LocalDate;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name="pessoa")
-public class Pessoa {
+public abstract class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_pessoa")
-    private Integer idPessoa;
+    protected Integer idPessoa;
 
     @NotNull
     @NotBlank
-    private String nome;
+    protected String nome;
 
     @NotNull
     @NotBlank
-    private String endereco;
+    protected String endereco;
 
     @NotNull
     @NotBlank
-    private String telefone;
+    protected String telefone;
 
     @NotNull
     @NotBlank
-    private String cpf;
+    protected String cpf;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "Pessoa")
-    private List<Pedido> pedidos = new ArrayList<>();
+    @NotNull
+    @NotBlank
+    protected LocalDate creatadeAt;
 
-    public List<Pedido> getPedidos() {
-        return pedidos;
-    }
+    protected Set<Integer> tipoPessoa = new HashSet<>();
 
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
-    }
 
     public Pessoa() {
     }
@@ -105,16 +101,32 @@ public class Pessoa {
         this.nome = nome;
     }
 
+    public @NotNull @NotBlank LocalDate getCreatadeAt() {
+        return creatadeAt;
+    }
+
+    public void setCreatadeAt(@NotNull @NotBlank LocalDate creatadeAt) {
+        this.creatadeAt = creatadeAt;
+    }
+
+    public Set<TipoPessoa> getTipoPessoa() {
+        return tipoPessoa.stream().map(TipoPessoa::toEnum).collect(Collectors.toSet());
+    }
+
+    public void addTipoPessoa(TipoPessoa tipoPessoa) {
+        this.tipoPessoa.add(tipoPessoa.getId());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pessoa pessoa = (Pessoa) o;
-        return Objects.equals(idPessoa, pessoa.idPessoa) && Objects.equals(nome, pessoa.nome) && Objects.equals(endereco, pessoa.endereco) && Objects.equals(telefone, pessoa.telefone) && Objects.equals(cpf, pessoa.cpf);
+        return Objects.equals(idPessoa, pessoa.idPessoa) && Objects.equals(cpf, pessoa.cpf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idPessoa, nome, endereco, telefone, cpf);
+        return Objects.hash(idPessoa, cpf);
     }
 }
