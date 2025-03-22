@@ -59,13 +59,17 @@ public class Pedido {
     @JoinColumn(name="idEstabelecimento")
     private Estabelecimento Estabelecimento;
 
+    @ManyToOne
+    @JoinColumn(name="idProduto")
+    private Produto Produto;
+
     public Pedido() {
         this.valor = BigDecimal.ZERO;
         this.statusPedido= StatusPedido.PENDENTE;
         this.tipoEntrega = TipoEntrega.ENTREGA;
     }
 
-    public Pedido(UUID id, String descricaoPedido, String tempoEspera, BigDecimal valor, StatusPedido statusPedido, TipoEntrega tipoEntrega, com.trabalho.ifood.domains.Cliente Cliente, com.trabalho.ifood.domains.Entregador Entregador, com.trabalho.ifood.domains.Estabelecimento estabelecimento) {
+    public Pedido(UUID id, String descricaoPedido, String tempoEspera, BigDecimal valor, StatusPedido statusPedido, TipoEntrega tipoEntrega, com.trabalho.ifood.domains.Cliente Cliente, com.trabalho.ifood.domains.Entregador Entregador, com.trabalho.ifood.domains.Estabelecimento estabelecimento, com.trabalho.ifood.domains.Produto produto) {
         this.id = id;
         this.descricaoPedido = descricaoPedido;
         this.tempoEspera = tempoEspera;
@@ -75,6 +79,7 @@ public class Pedido {
         cliente = cliente;
         entregador = entregador;
         Estabelecimento = estabelecimento;
+        Produto = produto;
     }
 
     public UUID getId() {
@@ -155,6 +160,14 @@ public class Pedido {
 
     public void setEstabelecimento(com.trabalho.ifood.domains.Estabelecimento estabelecimento) {
         Estabelecimento = estabelecimento;
+    }
+
+    public com.trabalho.ifood.domains.Produto getProduto() {
+        return Produto;
+    }
+
+    public void setProduto(com.trabalho.ifood.domains.Produto produto) {
+        Produto = produto;
     }
 
     @Override

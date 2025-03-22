@@ -1,10 +1,7 @@
 package com.trabalho.ifood.services;
 
 
-import com.trabalho.ifood.domains.Cliente;
-import com.trabalho.ifood.domains.Entregador;
-import com.trabalho.ifood.domains.Estabelecimento;
-import com.trabalho.ifood.domains.Pedido;
+import com.trabalho.ifood.domains.*;
 import com.trabalho.ifood.domains.dtos.PedidoDTO;
 import com.trabalho.ifood.domains.enums.StatusPedido;
 import com.trabalho.ifood.domains.enums.TipoEntrega;
@@ -34,6 +31,8 @@ public class PedidoService {
     @Autowired
     private EstabelecimentoService EstabelecimentoService;
 
+    private ProdutoService ProdutoService;
+
     public List<PedidoDTO> findAll() {
         return PedidoRepo.findAll().stream().map(obj -> new PedidoDTO(obj)).
                 collect(Collectors.toList());
@@ -48,6 +47,7 @@ public class PedidoService {
         Cliente cliente = ClienteService.findbyId(dto.getCliente());
         Entregador entregador = EntregadorService.findbyId(dto.getEntregador());
         Estabelecimento estabelecimento = EstabelecimentoService.findbyId(dto.getEstabelecimento());
+        Produto produto = ProdutoService.findbyId(dto.getProduto());
 
         Pedido pedido = new Pedido();
         if (dto.getId() != null){
@@ -61,6 +61,7 @@ public class PedidoService {
         pedido.setDataPedido(dto.getDataPedido());
         pedido.setDescricaoPedido(dto.getDescricaoPedido());
         pedido.setEstabelecimento(estabelecimento);
+        pedido.setProduto(produto);
         pedido.setTempoEspera(dto.getTempoEspera());
         pedido.setValor(dto.getValor());
         return pedido;

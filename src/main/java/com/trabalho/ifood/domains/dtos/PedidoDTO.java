@@ -43,6 +43,9 @@ public class PedidoDTO {
     @NotNull(message = "O campo Estabelecimento é requerido")
     private int Estabelecimento;
 
+    @NotNull(message = "O campo Produto é requerido")
+    private Long Produto;
+
    private String nomeCliente;
    private String nomeEntregador;
 
@@ -60,6 +63,7 @@ public class PedidoDTO {
         Cliente = pedido.getCliente().getIdPessoa();
         Entregador = pedido.getEntregador().getIdPessoa();
         Estabelecimento = pedido.getEstabelecimento().getIdEstab();
+        Produto = pedido.getProduto().getIdProduto();
         this.nomeCliente = pedido.getCliente().getNome();
         this.nomeEntregador = pedido.getEntregador().getNome();
     }
@@ -159,6 +163,14 @@ public class PedidoDTO {
 
     public void setNomeEntregador(String nomeEntregador) {
         this.nomeEntregador = nomeEntregador;
+    }
+
+    public @NotNull(message = "O campo Produto é requerido") Long getProduto() {
+        return Produto;
+    }
+
+    public void setProduto(@NotNull(message = "O campo Produto é requerido") Long produto) {
+        Produto = produto;
     }
 }
 
