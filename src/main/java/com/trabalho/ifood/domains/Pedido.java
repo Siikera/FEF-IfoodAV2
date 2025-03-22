@@ -30,7 +30,6 @@ public class Pedido {
 
     @NotNull
     @NotBlank
-    @Column(unique = true)
     private String tempoEspera;
     
     @JsonFormat(pattern = "dd/MM/yyyy")

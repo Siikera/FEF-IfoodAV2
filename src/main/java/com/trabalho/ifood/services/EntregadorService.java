@@ -7,11 +7,13 @@ import com.trabalho.ifood.repositories.EntregadorRepository;
 import com.trabalho.ifood.services.exceptions.DataIntegrityViolationException;
 import com.trabalho.ifood.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class EntregadorService {
     @Autowired
     private EntregadorRepository EntregadorRepo;

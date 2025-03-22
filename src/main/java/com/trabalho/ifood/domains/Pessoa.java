@@ -94,11 +94,11 @@ protected Set<Integer> tipoPessoa = new HashSet<>();
         this.nome = nome;
     }
 
-    public @NotNull @NotBlank LocalDate getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(@NotNull @NotBlank LocalDate createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 

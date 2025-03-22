@@ -14,9 +14,6 @@ import java.time.LocalDate;
 public class DBService {
 
     @Autowired
-    private PessoaRepository PessoaRepository;
-
-    @Autowired
     private EstabelecimentoRepository EstabelecimentoRepository;
 
     @Autowired
