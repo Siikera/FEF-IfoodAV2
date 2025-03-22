@@ -9,10 +9,11 @@ import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class PedidoDTO {
 
-    private Long id;
+    private UUID id;
 
     @NotNull(message = "O campo descricaoPedido não pode ser nulo")
     @NotBlank (message = "O campo descricaoPedido não pode estar vazio")
@@ -33,25 +34,106 @@ public class PedidoDTO {
     private int statusPedido;
     private int tipoEntrega;
 
-    @NotNull(message = "O campo Pessoa é requerido")
-    private int Pessoa;
+    @NotNull(message = "O campo Cliente é requerido")
+    private Long Cliente;
+
+    @NotNull(message = "O campo Entregador é requerido")
+    private Long Entregador;
 
     @NotNull(message = "O campo Estabelecimento é requerido")
     private int Estabelecimento;
 
+   private String nomeCliente;
+   private String nomeEntregador;
+
     public PedidoDTO() {
     }
 
-    public PedidoDTO(Pedido Pedido) {
-        this.id = Pedido.getId();
-        this.descricaoPedido = Pedido.getdescricaoPedido();
-        this.tempoEspera = Pedido.gettempoEspera();
-        this.dataPedido = Pedido.getdataPedido();
-        this.valor = Pedido.getvalor();
-        this.statusPedido = Pedido.getStatus().getId();
-        this.tipoEntrega = Pedido.gettipoEntrega().getId();
-        Pessoa = Pedido.getPessoa().getIdPessoa();
-        Estabelecimento = Pedido.getEstabelecimento().getIdEstab();
+    public PedidoDTO(Pedido pedido) {
+        this.id = pedido.getId();
+        this.descricaoPedido = pedido.getDescricaoPedido();
+        this.tempoEspera = pedido.getTempoEspera();
+        this.dataPedido = pedido.getDataPedido();
+        this.valor = pedido.getValor();
+        this.statusPedido = pedido.getStatusPedido().getId();
+        this.tipoEntrega = pedido.getTipoEntrega().getId();
+        Cliente = pedido.getCliente().getIdPessoa();
+        Entregador = pedido.getEntregador().getIdPessoa();
+        Estabelecimento = pedido.getEstabelecimento().getIdEstab();
+        this.nomeCliente = pedido.getCliente().getNome();
+        this.nomeEntregador = pedido.getEntregador().getNome();
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public @NotNull(message = "O campo descricaoPedido não pode ser nulo") @NotBlank(message = "O campo descricaoPedido não pode estar vazio") String getDescricaoPedido() {
+        return descricaoPedido;
+    }
+
+    public void setDescricaoPedido(@NotNull(message = "O campo descricaoPedido não pode ser nulo") @NotBlank(message = "O campo descricaoPedido não pode estar vazio") String descricaoPedido) {
+        this.descricaoPedido = descricaoPedido;
+    }
+
+    public @NotNull(message = "O campo tempoEspera não pode ser nulo") @NotBlank(message = "O campo tempoEspera não pode estar vazio") String getTempoEspera() {
+        return tempoEspera;
+    }
+
+    public void setTempoEspera(@NotNull(message = "O campo tempoEspera não pode ser nulo") @NotBlank(message = "O campo tempoEspera não pode estar vazio") String tempoEspera) {
+        this.tempoEspera = tempoEspera;
+    }
+
+    public LocalDate getDataPedido() {
+        return dataPedido;
+    }
+
+    public void setDataPedido(LocalDate dataPedido) {
+        this.dataPedido = dataPedido;
+    }
+
+    public @NotNull(message = "O campo Valor de Compra não pode ser nulo") @Digits(integer = 15, fraction = 2) BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setValor(@NotNull(message = "O campo Valor de Compra não pode ser nulo") @Digits(integer = 15, fraction = 2) BigDecimal valor) {
+        this.valor = valor;
+    }
+
+    public int getStatusPedido() {
+        return statusPedido;
+    }
+
+    public void setStatusPedido(int statusPedido) {
+        this.statusPedido = statusPedido;
+    }
+
+    public int getTipoEntrega() {
+        return tipoEntrega;
+    }
+
+    public void setTipoEntrega(int tipoEntrega) {
+        this.tipoEntrega = tipoEntrega;
+    }
+
+    public @NotNull(message = "O campo Cliente é requerido") Long getCliente() {
+        return Cliente;
+    }
+
+    public void setCliente(@NotNull(message = "O campo Cliente é requerido") Long cliente) {
+        Cliente = cliente;
+    }
+
+    public @NotNull(message = "O campo Entregador é requerido") Long getEntregador() {
+        return Entregador;
+    }
+
+    public void setEntregador(@NotNull(message = "O campo Entregador é requerido") Long entregador) {
+        Entregador = entregador;
     }
 
     @NotNull(message = "O campo Estabelecimento é requerido")
@@ -59,74 +141,24 @@ public class PedidoDTO {
         return Estabelecimento;
     }
 
-    public void setEstabelecimento(@NotNull(message = "O campo Estabelecimento é requerido") int Estabelecimento) {
-        Estabelecimento = Estabelecimento;
+    public void setEstabelecimento(@NotNull(message = "O campo Estabelecimento é requerido") int estabelecimento) {
+        Estabelecimento = estabelecimento;
     }
 
-    @NotNull(message = "O campo Pessoa é requerido")
-    public int getPessoa() {
-        return Pessoa;
+    public String getNomeCliente() {
+        return nomeCliente;
     }
 
-    public void setPessoa(@NotNull(message = "O campo Pessoa é requerido") int Pessoa) {
-        Pessoa = Pessoa;
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
     }
 
-    public int gettipoEntrega() {
-        return tipoEntrega;
+    public String getNomeEntregador() {
+        return nomeEntregador;
     }
 
-    public void settipoEntrega(int tipoEntrega) {
-        this.tipoEntrega = tipoEntrega;
-    }
-
-    public int getStatus() {
-        return statusPedido;
-    }
-
-    public void setStatus(int status) {
-        this.statusPedido = status;
-    }
-
-    public @NotNull(message = "O campo Valor de Compra não pode ser nulo") @Digits(integer = 15, fraction = 2) BigDecimal getvalor() {
-        return valor;
-    }
-
-    public void setvalor(@NotNull(message = "O campo Valor de Compra não pode ser nulo") @Digits(integer = 15, fraction = 2) BigDecimal valor) {
-        this.valor = valor;
-    }
-
-    public LocalDate getdataPedido() {
-        return dataPedido;
-    }
-
-    public void setdataPedido(LocalDate dataPedido) {
-        this.dataPedido = dataPedido;
-    }
-
-
-    public @NotNull(message = "O campo tempoEspera não pode ser nulo") @NotBlank(message = "O campo tempoEspera não pode estar vazio") String gettempoEspera() {
-        return tempoEspera;
-    }
-
-    public void settempoEspera(@NotNull(message = "O campo tempoEspera não pode ser nulo") @NotBlank(message = "O campo tempoEspera não pode estar vazio") String tempoEspera) {
-        this.tempoEspera = tempoEspera;
-    }
-
-    public @NotNull(message = "O campo descricaoPedido não pode ser nulo") @NotBlank(message = "O campo descricaoPedido não pode estar vazio") String getdescricaoPedido() {
-        return descricaoPedido;
-    }
-
-    public void setdescricaoPedido(@NotNull(message = "O campo descricaoPedido não pode ser nulo") @NotBlank(message = "O campo descricaoPedido não pode estar vazio") String descricaoPedido) {
-        this.descricaoPedido = descricaoPedido;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setNomeEntregador(String nomeEntregador) {
+        this.nomeEntregador = nomeEntregador;
     }
 }
 

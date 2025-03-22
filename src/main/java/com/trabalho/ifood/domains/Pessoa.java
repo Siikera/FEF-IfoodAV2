@@ -1,8 +1,7 @@
 package com.trabalho.ifood.domains;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.trabalho.ifood.domains.dtos.PessoaDTO;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.trabalho.ifood.domains.enums.TipoPessoa;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -17,7 +16,7 @@ import java.util.stream.Collectors;
 public abstract class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_pessoa")
-    protected Integer idPessoa;
+    protected Long idPessoa;
 
     @NotNull
     @NotBlank
@@ -31,41 +30,35 @@ public abstract class Pessoa {
     @NotBlank
     protected String telefone;
 
-    @NotNull
-    @NotBlank
+    @Column(unique = true)
     protected String cpf;
 
-    @NotNull
-    @NotBlank
-    protected LocalDate creatadeAt;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    protected LocalDate createdAt;
 
-    protected Set<Integer> tipoPessoa = new HashSet<>();
+@ElementCollection(fetch = FetchType.EAGER)
+@CollectionTable(name = "pessoas")
+protected Set<Integer> tipoPessoa = new HashSet<>();
 
 
     public Pessoa() {
+        addTipoPessoa(TipoPessoa.CLIENTE);
     }
 
-    public Pessoa(Integer idPessoa, String nome, String endereco, String telefone, String cpf) {
+    public Pessoa(Long idPessoa, String nome, String endereco, String telefone, String cpf) {
         this.idPessoa = idPessoa;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.cpf = cpf;
+        addTipoPessoa(TipoPessoa.CLIENTE);
     }
 
-    public Pessoa(PessoaDTO dto) {
-        this.idPessoa = dto.getIdPessoa();
-        this.nome = dto.getNome();
-        this.endereco = dto.getEndereco();
-        this.telefone = dto.getTelefone();
-        this.cpf = dto.getCpf();
-    }
-
-    public Integer getIdPessoa() {
+    public Long getIdPessoa() {
         return idPessoa;
     }
 
-    public void setIdPessoa(Integer idPessoa) {
+    public void setIdPessoa(Long idPessoa) {
         this.idPessoa = idPessoa;
     }
 
@@ -101,12 +94,12 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public @NotNull @NotBlank LocalDate getCreatadeAt() {
-        return creatadeAt;
+    public @NotNull @NotBlank LocalDate getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreatadeAt(@NotNull @NotBlank LocalDate creatadeAt) {
-        this.creatadeAt = creatadeAt;
+    public void setCreatedAt(@NotNull @NotBlank LocalDate createdAt) {
+        this.createdAt = createdAt;
     }
 
     public Set<TipoPessoa> getTipoPessoa() {

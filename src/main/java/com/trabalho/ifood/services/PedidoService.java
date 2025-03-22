@@ -1,13 +1,14 @@
 package com.trabalho.ifood.services;
 
 
-import com.trabalho.ifood.domains.Pessoa;
+import com.trabalho.ifood.domains.Cliente;
+import com.trabalho.ifood.domains.Entregador;
 import com.trabalho.ifood.domains.Estabelecimento;
 import com.trabalho.ifood.domains.Pedido;
 import com.trabalho.ifood.domains.dtos.PedidoDTO;
-import com.trabalho.ifood.repositories.PessoaRepository;
-import com.trabalho.ifood.repositories.EstabelecimentoRepository;
-import com.trabalho.ifood.repositories.PedidoRepository;
+import com.trabalho.ifood.domains.enums.StatusPedido;
+import com.trabalho.ifood.domains.enums.TipoEntrega;
+import com.trabalho.ifood.repositories.*;
 import com.trabalho.ifood.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,48 +26,59 @@ public class PedidoService {
     private PedidoRepository PedidoRepo;
 
     @Autowired
-    private PessoaRepository PessoaRepo;
+    private ClienteService ClienteService;
 
     @Autowired
-    private EstabelecimentoRepository EstabelecimentoRepo;
+    private EntregadorService EntregadorService;
+
+    @Autowired
+    private EstabelecimentoService EstabelecimentoService;
 
     public List<PedidoDTO> findAll() {
         return PedidoRepo.findAll().stream().map(obj -> new PedidoDTO(obj)).
                 collect(Collectors.toList());
     }
 
-    public Pedido findbyId(Long id) {
+    public Pedido findbyId(UUID id) {
         Optional<Pedido> obj = PedidoRepo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Pedido não encontrado! Id: " + id));
     }
 
+    private Pedido newPedido(PedidoDTO dto){
+        Cliente cliente = ClienteService.findbyId(dto.getCliente());
+        Entregador entregador = EntregadorService.findbyId(dto.getEntregador());
+        Estabelecimento estabelecimento = EstabelecimentoService.findbyId(dto.getEstabelecimento());
+
+        Pedido pedido = new Pedido();
+        if (dto.getId() != null){
+            pedido.setId(dto.getId());
+        }
+
+        pedido.setCliente(cliente);
+        pedido.setEntregador(entregador);
+        pedido.setStatusPedido(StatusPedido.toEnum(dto.getStatusPedido()));
+        pedido.setTipoEntrega(TipoEntrega.toEnum(dto.getTipoEntrega()));
+        pedido.setDataPedido(dto.getDataPedido());
+        pedido.setDescricaoPedido(dto.getDescricaoPedido());
+        pedido.setEstabelecimento(estabelecimento);
+        pedido.setTempoEspera(dto.getTempoEspera());
+        pedido.setValor(dto.getValor());
+        return pedido;
+
+    }
+
     public Pedido create(PedidoDTO dto) {
-        dto.setId(null);
-        validaPedido(dto);
-        Pedido obj = new Pedido(dto);
-        return PedidoRepo.save(obj);
+        return PedidoRepo.save(newPedido(dto));
     }
 
-    private void validaPedido(PedidoDTO dto) {
-        Optional<Pessoa> Pessoa = PessoaRepo.findById(dto.getPessoa());
-        if(!Pessoa.isPresent()){
-            throw new DataIntegrityViolationException("Pessoa - " + dto.getPessoa() + " não está cadastrado.");
-        }
-
-        Optional<Estabelecimento> Estabelecimento = EstabelecimentoRepo.findById(dto.getEstabelecimento());
-        if(!Estabelecimento.isPresent()){
-            throw new DataIntegrityViolationException("Estabelecimento - " + dto.getEstabelecimento() + " não está cadastrada.");
-        }
-    }
-    public Pedido update(Long id, PedidoDTO objDto){
+    public Pedido update(UUID id, PedidoDTO objDto){
         objDto.setId(id);
         Pedido oldObj = findbyId(id);
-        validaPedido(objDto);
-        oldObj = new Pedido(objDto);
+        oldObj = newPedido(objDto);
         return PedidoRepo.save(oldObj);
     }
 
-    public void delete(Long id){
+    public void delete(UUID id){
         Pedido obj = findbyId(id);
         PedidoRepo.deleteById(id);
     }

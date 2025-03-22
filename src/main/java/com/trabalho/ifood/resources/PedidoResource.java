@@ -11,42 +11,43 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/pedido")
 public class PedidoResource {
 
     @Autowired
-    private PedidoService PedidoService;
+    private PedidoService pedidoService;
 
     @GetMapping
     public ResponseEntity<List<PedidoDTO>> findAll(){
-        return ResponseEntity.ok().body(PedidoService.findAll());
+        return ResponseEntity.ok().body(pedidoService.findAll());
 
     }
     @GetMapping(value = "/{id}")
-    public ResponseEntity<PedidoDTO> findById(@PathVariable Long id){
-        Pedido obj = this.PedidoService.findbyId(id);
+    public ResponseEntity<PedidoDTO> findById(@PathVariable UUID id){
+        Pedido obj = this.pedidoService.findbyId(id);
         return ResponseEntity.ok().body(new PedidoDTO(obj));
     }
 
     @PostMapping
     public ResponseEntity<PedidoDTO> create(@Valid @RequestBody PedidoDTO dto){
-        Pedido Pedido = PedidoService.create(dto);
+        Pedido Pedido = pedidoService.create(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(Pedido.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<PedidoDTO> update(@PathVariable Long id, @Valid @RequestBody PedidoDTO objDto){
-        Pedido Obj = PedidoService.update(id, objDto);
+    public ResponseEntity<PedidoDTO> update(@PathVariable UUID id, @Valid @RequestBody PedidoDTO objDto){
+        Pedido Obj = pedidoService.update(id, objDto);
         return ResponseEntity.ok().body(new PedidoDTO(Obj));
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<PedidoDTO> delete(@PathVariable Long id){
-        PedidoService.delete(id);
+    public ResponseEntity<PedidoDTO> delete(@PathVariable UUID id){
+        pedidoService.delete(id);
         return ResponseEntity.noContent().build();
     }
 

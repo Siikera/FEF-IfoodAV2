@@ -9,18 +9,20 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.cglib.core.Local;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 @Table(name="pedido")
 public class Pedido {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_Pedido")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @NotNull
     @NotBlank
@@ -47,8 +49,12 @@ public class Pedido {
     private TipoEntrega tipoEntrega;
 
     @ManyToOne
-    @JoinColumn(name="idPessoa")
-    private Pessoa Pessoa;
+    @JoinColumn(name="idCliente")
+    private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name="idEntregador")
+    private Entregador entregador;
 
     @ManyToOne
     @JoinColumn(name="idEstabelecimento")
@@ -60,119 +66,108 @@ public class Pedido {
         this.tipoEntrega = TipoEntrega.ENTREGA;
     }
 
-    public Pedido(Long id, String descricaoPedido, String tempoEspera, LocalDate dataPedido, BigDecimal valor, StatusPedido status, TipoEntrega tipoEntrega, Pessoa Pessoa, Estabelecimento Estabelecimento) {
+    public Pedido(UUID id, String descricaoPedido, String tempoEspera, BigDecimal valor, StatusPedido statusPedido, TipoEntrega tipoEntrega, com.trabalho.ifood.domains.Cliente Cliente, com.trabalho.ifood.domains.Entregador Entregador, com.trabalho.ifood.domains.Estabelecimento estabelecimento) {
         this.id = id;
         this.descricaoPedido = descricaoPedido;
         this.tempoEspera = tempoEspera;
-        this.dataPedido = dataPedido;
         this.valor = valor;
-        this.statusPedido = status;
         this.tipoEntrega = tipoEntrega;
-        this.Pessoa = Pessoa;
-        this.Estabelecimento = Estabelecimento;
+        this.statusPedido = statusPedido;
+        cliente = cliente;
+        entregador = entregador;
+        Estabelecimento = estabelecimento;
     }
 
-    public Pedido(PedidoDTO dto) {
-        this.id = dto.getId();
-        this.descricaoPedido = dto.getdescricaoPedido();
-        this.tempoEspera = dto.gettempoEspera();
-        this.dataPedido = dto.getdataPedido();
-        this.valor = dto.getvalor();
-
-        this.Pessoa = new Pessoa();
-        this.Pessoa.setIdPessoa(dto.getPessoa());
-        this.Estabelecimento = new Estabelecimento();
-        this.Estabelecimento.setIdEstab(dto.getEstabelecimento());
-        this.statusPedido = StatusPedido.toEnum(dto.getStatus());
-        this.tipoEntrega = TipoEntrega.toEnum(dto.gettipoEntrega());
-
-
-    }
-
-    public @NotNull @NotBlank String getdescricaoPedido() {
-        return descricaoPedido;
-    }
-
-    public void setdescricaoPedido(@NotNull @NotBlank String descricaoPedido) {
-        this.descricaoPedido = descricaoPedido;
-    }
-
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
-    public @NotNull @NotBlank String gettempoEspera() {
+    public @NotNull @NotBlank String getDescricaoPedido() {
+        return descricaoPedido;
+    }
+
+    public void setDescricaoPedido(@NotNull @NotBlank String descricaoPedido) {
+        this.descricaoPedido = descricaoPedido;
+    }
+
+    public @NotNull @NotBlank String getTempoEspera() {
         return tempoEspera;
     }
 
-    public void settempoEspera(@NotNull @NotBlank String tempoEspera) {
+    public void setTempoEspera(@NotNull @NotBlank String tempoEspera) {
         this.tempoEspera = tempoEspera;
     }
 
-    public LocalDate getdataPedido() {
+    public LocalDate getDataPedido() {
         return dataPedido;
     }
 
-    public void setdataPedido(LocalDate dataPedido) {
+    public void setDataPedido(LocalDate dataPedido) {
         this.dataPedido = dataPedido;
     }
 
-    public @NotNull @Digits(integer = 15, fraction = 2) BigDecimal getvalor() {
+    public @NotNull @Digits(integer = 15, fraction = 2) BigDecimal getValor() {
         return valor;
     }
 
-    public void setvalor(@NotNull @Digits(integer = 15, fraction = 2) BigDecimal valor) {
+    public void setValor(@NotNull @Digits(integer = 15, fraction = 2) BigDecimal valor) {
         this.valor = valor;
     }
 
-    public StatusPedido getStatus() {
+    public StatusPedido getStatusPedido() {
         return statusPedido;
     }
 
-    public void setStatus(StatusPedido status) {
-        this.statusPedido = status;
+    public void setStatusPedido(StatusPedido statusPedido) {
+        this.statusPedido = statusPedido;
     }
 
-    public TipoEntrega gettipoEntrega() {
+    public TipoEntrega getTipoEntrega() {
         return tipoEntrega;
     }
 
-    public void settipoEntrega(TipoEntrega tipoEntrega) {
+    public void setTipoEntrega(TipoEntrega tipoEntrega) {
         this.tipoEntrega = tipoEntrega;
     }
 
-    public Pessoa getPessoa() {
-        return Pessoa;
+    public com.trabalho.ifood.domains.Cliente getCliente() {
+        return cliente;
     }
 
-    public void setPessoa(Pessoa Pessoa) {
-        this.Pessoa = Pessoa;
+    public void setCliente(com.trabalho.ifood.domains.Cliente Cliente) {
+        cliente = Cliente;
     }
 
-    public Estabelecimento getEstabelecimento() {
+    public com.trabalho.ifood.domains.Entregador getEntregador() {
+        return entregador;
+    }
+
+    public void setEntregador(com.trabalho.ifood.domains.Entregador Entregador) {
+        entregador = entregador;
+    }
+
+    public com.trabalho.ifood.domains.Estabelecimento getEstabelecimento() {
         return Estabelecimento;
     }
 
-    public void setEstabelecimento(Estabelecimento Estabelecimento) {
-        this.Estabelecimento = Estabelecimento;
+    public void setEstabelecimento(com.trabalho.ifood.domains.Estabelecimento estabelecimento) {
+        Estabelecimento = estabelecimento;
     }
-
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Pedido Pedido = (Pedido) o;
-        return id == Pedido.id && Objects.equals(descricaoPedido, Pedido.descricaoPedido) && Objects.equals(tempoEspera, Pedido.tempoEspera) && Objects.equals(dataPedido, Pedido.dataPedido) && Objects.equals(valor, Pedido.valor) && statusPedido == Pedido.statusPedido && tipoEntrega == Pedido.tipoEntrega && Objects.equals(Pessoa, Pedido.Pessoa) && Objects.equals(Estabelecimento, Pedido.Estabelecimento);
+        Pedido pedido = (Pedido) o;
+        return Objects.equals(id, pedido.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, descricaoPedido, tempoEspera, dataPedido, valor, statusPedido, tipoEntrega, Pessoa, Estabelecimento);
+        return Objects.hashCode(id);
     }
 }

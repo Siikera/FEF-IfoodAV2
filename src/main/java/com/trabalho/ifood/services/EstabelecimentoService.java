@@ -23,7 +23,7 @@ public class EstabelecimentoService {
                 collect(Collectors.toList());
 
     }
-    public Estabelecimento findbyId (int id){
+    public Estabelecimento findbyId (Integer id){
         Optional<Estabelecimento> obj = EstabelecimentoRepo.findById(id);
         return obj.orElseThrow(()-> new ObjectNotFoundException("Estabelecimento não encontrado! Id: " + id));
     }
