@@ -31,6 +31,7 @@ public class PedidoService {
     @Autowired
     private EstabelecimentoService EstabelecimentoService;
 
+    @Autowired
     private ProdutoService ProdutoService;
 
     public List<PedidoDTO> findAll() {

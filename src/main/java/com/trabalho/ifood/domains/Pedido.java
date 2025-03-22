@@ -76,8 +76,8 @@ public class Pedido {
         this.valor = valor;
         this.tipoEntrega = tipoEntrega;
         this.statusPedido = statusPedido;
-        cliente = cliente;
-        entregador = entregador;
+        cliente = Cliente;
+        entregador = Entregador;
         Estabelecimento = estabelecimento;
         Produto = produto;
     }
@@ -151,7 +151,7 @@ public class Pedido {
     }
 
     public void setEntregador(com.trabalho.ifood.domains.Entregador Entregador) {
-        entregador = entregador;
+        entregador = Entregador;
     }
 
     public com.trabalho.ifood.domains.Estabelecimento getEstabelecimento() {

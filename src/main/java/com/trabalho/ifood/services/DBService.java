@@ -43,9 +43,19 @@ public class DBService {
 
         Estabelecimento Estabelecimento02 = new Estabelecimento(null, "22-222-2222222-22", "Burguer King", "Fast-Food", "4.5", new BigDecimal("13.90"));
 
+        ClienteRepository.save(Cliente01);
+        ClienteRepository.save(Cliente02);
+        EntregadorRepository.save(Entregador01);
+        EntregadorRepository.save(Entregador02);
+        EstabelecimentoRepository.save(Estabelecimento01);
+        EstabelecimentoRepository.save(Estabelecimento02);
 
         GrupoProduto grupo01 = new GrupoProduto(0,"Refrigerantes", TipoProduto.COMIDA);
         GrupoProduto grupo02 = new GrupoProduto(0,"Snacks", TipoProduto.BEBIDA);
+
+        GrupoProdutoRepository.save(grupo01);
+        GrupoProdutoRepository.save(grupo02);
+
 
         Produto produto01 = new Produto(0,"1111", "Coca Cola", new BigDecimal("100"), new BigDecimal("3.5"),
                 LocalDate.now(),grupo01, StatusProduto.ATIVO);
@@ -56,6 +66,11 @@ public class DBService {
         Produto produto04 = new Produto(0,"4444", "Doritos", new BigDecimal("400"), new BigDecimal("15.5"),
                 LocalDate.now(),grupo02,StatusProduto.ATIVO);
 
+        ProdutoRepository.save(produto01);
+        ProdutoRepository.save(produto02);
+        ProdutoRepository.save(produto03);
+        ProdutoRepository.save(produto04);
+
         Pedido Pedido01 = new Pedido(null, "Pedido1", "15 minutos", new BigDecimal("99.90").setScale(2),
                 StatusPedido.ENTREGUE,TipoEntrega.RETIRADA, Cliente01, Entregador01 , Estabelecimento01, produto01);
 
@@ -64,19 +79,7 @@ public class DBService {
 
         Pedido Pedido03 = new Pedido(null, "Pedido1", "15 minutos", new BigDecimal("99.90").setScale(2),
                 StatusPedido.ENTREGUE,TipoEntrega.RETIRADA, Cliente01, Entregador02 , Estabelecimento01, produto03);
-
-        ClienteRepository.save(Cliente01);
-        ClienteRepository.save(Cliente02);
-        EntregadorRepository.save(Entregador01);
-        EntregadorRepository.save(Entregador02);
-        EstabelecimentoRepository.save(Estabelecimento01);
-        EstabelecimentoRepository.save(Estabelecimento02);
-        GrupoProdutoRepository.save(grupo01);
-        GrupoProdutoRepository.save(grupo02);
-        ProdutoRepository.save(produto01);
-        ProdutoRepository.save(produto02);
-        ProdutoRepository.save(produto03);
-        ProdutoRepository.save(produto04);
+        
         PedidoRepository.save(Pedido01);
         PedidoRepository.save(Pedido02);
         PedidoRepository.save(Pedido03);
