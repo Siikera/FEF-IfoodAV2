@@ -57,13 +57,13 @@ public class DBService {
         GrupoProdutoRepository.save(grupo02);
 
 
-        Produto produto01 = new Produto(0,"1111", "Coca Cola", new BigDecimal("100"), new BigDecimal("3.5"),
+        Produto produto01 = new Produto(null,"1111", "Coca Cola", new BigDecimal("100"), new BigDecimal("3.5"),
                 LocalDate.now(),grupo01, StatusProduto.ATIVO);
-        Produto produto02 = new Produto(0,"2222", "Guarana Antartica", new BigDecimal("200"), new BigDecimal("3.0"),
+        Produto produto02 = new Produto(null,"2222", "Guarana Antartica", new BigDecimal("200"), new BigDecimal("3.0"),
                 LocalDate.now(),grupo01,StatusProduto.ATIVO);
-        Produto produto03 = new Produto(0, "3333","Ruffles", new BigDecimal("300"), new BigDecimal("4.0"),
+        Produto produto03 = new Produto(null, "3333","Ruffles", new BigDecimal("300"), new BigDecimal("4.0"),
                 LocalDate.now(),grupo02,StatusProduto.ATIVO);
-        Produto produto04 = new Produto(0,"4444", "Doritos", new BigDecimal("400"), new BigDecimal("15.5"),
+        Produto produto04 = new Produto(null,"4444", "Doritos", new BigDecimal("400"), new BigDecimal("15.5"),
                 LocalDate.now(),grupo02,StatusProduto.ATIVO);
 
         ProdutoRepository.save(produto01);
