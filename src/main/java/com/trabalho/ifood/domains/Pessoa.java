@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Table(name="pessoa")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_pessoa")
