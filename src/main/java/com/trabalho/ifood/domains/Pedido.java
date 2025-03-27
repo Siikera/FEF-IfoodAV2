@@ -63,13 +63,17 @@ public class Pedido {
     @JoinColumn(name="idProduto")
     private Produto Produto;
 
+    @ManyToOne
+    @JoinColumn(name="idVeiculo")
+    private Veiculo Veiculo;
+
     public Pedido() {
         this.valor = BigDecimal.ZERO;
         this.statusPedido= StatusPedido.PENDENTE;
         this.tipoEntrega = TipoEntrega.ENTREGA;
     }
 
-    public Pedido(UUID id, String descricaoPedido, String tempoEspera, BigDecimal valor, StatusPedido statusPedido, TipoEntrega tipoEntrega, com.trabalho.ifood.domains.Cliente Cliente, com.trabalho.ifood.domains.Entregador Entregador, com.trabalho.ifood.domains.Estabelecimento estabelecimento, com.trabalho.ifood.domains.Produto produto) {
+    public Pedido(UUID id, String descricaoPedido, String tempoEspera, BigDecimal valor, StatusPedido statusPedido, TipoEntrega tipoEntrega, com.trabalho.ifood.domains.Cliente Cliente, com.trabalho.ifood.domains.Entregador Entregador, com.trabalho.ifood.domains.Estabelecimento estabelecimento, com.trabalho.ifood.domains.Produto produto, com.trabalho.ifood.domains.Veiculo veiculo) {
         this.id = id;
         this.descricaoPedido = descricaoPedido;
         this.tempoEspera = tempoEspera;
@@ -80,6 +84,7 @@ public class Pedido {
         entregador = Entregador;
         Estabelecimento = estabelecimento;
         Produto = produto;
+        Veiculo = veiculo;
     }
 
     public UUID getId() {
@@ -168,6 +173,14 @@ public class Pedido {
 
     public void setProduto(com.trabalho.ifood.domains.Produto produto) {
         Produto = produto;
+    }
+
+    public com.trabalho.ifood.domains.Veiculo getVeiculo() {
+        return Veiculo;
+    }
+
+    public void setVeiculo(com.trabalho.ifood.domains.Veiculo veiculo) {
+        Veiculo = veiculo;
     }
 
     @Override

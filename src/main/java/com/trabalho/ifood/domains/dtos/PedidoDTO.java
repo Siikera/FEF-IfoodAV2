@@ -46,6 +46,9 @@ public class PedidoDTO {
     @NotNull(message = "O campo Produto é requerido")
     private Long Produto;
 
+    @NotNull(message = "O campo Veiculo é requerido")
+    private Long Veiculo;
+
    private String nomeCliente;
    private String nomeEntregador;
 
@@ -64,6 +67,7 @@ public class PedidoDTO {
         Entregador = pedido.getEntregador().getIdPessoa();
         Estabelecimento = pedido.getEstabelecimento().getIdEstab();
         Produto = pedido.getProduto().getIdProduto();
+        Veiculo = pedido.getVeiculo().getId();
         this.nomeCliente = pedido.getCliente().getNome();
         this.nomeEntregador = pedido.getEntregador().getNome();
     }
@@ -163,6 +167,14 @@ public class PedidoDTO {
 
     public void setNomeEntregador(String nomeEntregador) {
         this.nomeEntregador = nomeEntregador;
+    }
+
+    public @NotNull(message = "O campo Veiculo é requerido") Long getVeiculo() {
+        return Veiculo;
+    }
+
+    public void setVeiculo(@NotNull(message = "O campo Veiculo é requerido") Long veiculo) {
+        Veiculo = veiculo;
     }
 
     public @NotNull(message = "O campo Produto é requerido") Long getProduto() {

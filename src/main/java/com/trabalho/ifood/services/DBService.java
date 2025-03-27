@@ -33,6 +33,9 @@ public class DBService {
     @Autowired
     private GrupoProdutoRepository GrupoProdutoRepository;
 
+    @Autowired
+    private VeiculoRepository VeiculoRepository;
+
     public void initDB() {
         Entregador Entregador01 = new Entregador(null, "Cadmiel", "Rua Severino Pai", "17994786539", "98778976587");
         Cliente Cliente01 = new Cliente(null, "Mateus", "Rua Amildo Filho", "17992868282", "12332112365");
@@ -71,14 +74,21 @@ public class DBService {
         ProdutoRepository.save(produto03);
         ProdutoRepository.save(produto04);
 
+        Veiculo Veiculo01 = new Veiculo(null, "Lancer", LocalDate.now(),"MATEUS",100000.00,"123454321");
+        Veiculo Veiculo02 = new Veiculo(null, "Ferrari", LocalDate.now(),"Jefferson",150000.00,"43256785423");
+        Veiculo Veiculo03 = new Veiculo(null, "Porshe", LocalDate.now(),"Guilherme",180000.00,"23456789765");
+        VeiculoRepository.save(Veiculo01);
+        VeiculoRepository.save(Veiculo02);
+        VeiculoRepository.save(Veiculo03);
+
         Pedido Pedido01 = new Pedido(null, "Pedido1", "15 minutos", new BigDecimal("99.90").setScale(2),
-                StatusPedido.ENTREGUE,TipoEntrega.RETIRADA, Cliente01, Entregador01 , Estabelecimento01, produto01);
+                StatusPedido.ENTREGUE,TipoEntrega.RETIRADA, Cliente01, Entregador01 , Estabelecimento01, produto01, Veiculo01);
 
         Pedido Pedido02 = new Pedido(null, "Pedido1", "15 minutos", new BigDecimal("99.90").setScale(2),
-                StatusPedido.ENTREGUE,TipoEntrega.RETIRADA, Cliente02, Entregador02 , Estabelecimento02, produto02);
+                StatusPedido.ENTREGUE,TipoEntrega.RETIRADA, Cliente02, Entregador02 , Estabelecimento02, produto02, Veiculo02);
 
         Pedido Pedido03 = new Pedido(null, "Pedido1", "15 minutos", new BigDecimal("99.90").setScale(2),
-                StatusPedido.ENTREGUE,TipoEntrega.RETIRADA, Cliente01, Entregador02 , Estabelecimento01, produto03);
+                StatusPedido.ENTREGUE,TipoEntrega.RETIRADA, Cliente01, Entregador02 , Estabelecimento01, produto03, Veiculo03);
         
         PedidoRepository.save(Pedido01);
         PedidoRepository.save(Pedido02);
