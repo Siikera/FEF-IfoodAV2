@@ -6,6 +6,8 @@ import com.trabalho.ifood.domains.dtos.ClienteDTO;
 import com.trabalho.ifood.domains.dtos.VeiculoDTO;
 import com.trabalho.ifood.services.ClienteService;
 import com.trabalho.ifood.services.VeiculoService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,16 +19,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/veiculo")
+@Tag(name = "Veiculos", description = "Api para gerenciamento de veiculos")
 public class VeiculoResource {
 
     @Autowired
     private VeiculoService veiculoService;
 
     @GetMapping
+    @Operation(summary = "Listar todos os veiculos", description = "Retorna uma lista com todos os veiculos cadastrados")
     public ResponseEntity<List<VeiculoDTO>> findAll(){ return ResponseEntity.ok().body(veiculoService.findAll());
 
     }
     @GetMapping(value = "/{id}")
+    @Operation(summary = "Busca o veiculo por id", description = "Realiza a busca de um veiculo cadastrado por id")
     public ResponseEntity<VeiculoDTO> findById(@PathVariable Long id){
         Veiculo obj = this.veiculoService.findbyId(id);
         return ResponseEntity.ok().body(new VeiculoDTO(obj));
